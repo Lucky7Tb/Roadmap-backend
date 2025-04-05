@@ -1,4 +1,4 @@
-# Roadmap.sh-backend project training
+# Roadmap.sh-backend project
 
 ## List project
 
