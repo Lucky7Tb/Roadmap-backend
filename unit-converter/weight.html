@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Unit Converter | {{.Title}}</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css">
+</head>
+
+<body>
+  <main class="container-fluid">
+    <nav>
+      <ul>
+        <li><strong>Unit Converter</strong></li>
+      </ul>
+      <ul>
+        <li><a href="/" class="contrast">Length</a></li>
+        <li><a href="/weight" class="contrast">Weight</a></li>
+        <li><a href="/temperature" class="contrast">Temperatur</a></li>
+      </ul>
+    </nav>
+
+    {{ if .IsResult }}
+    <p>Result of your calculation</p>
+    <p style="font-size: larger;"><strong>{{ .BaseValue }} {{ .FromUnit }} = {{ .Result }} {{ .ToUnit }}</strong></p>
+    <a href="/weight">
+      <button class="outline secondary">Reset</button>
+    </a>
+    {{ else }}
+    <form target="_self" method="post">
+      <fieldset>
+        <label>
+          Enter the weight to convert
+          <input name="weight" type="number" required />
+        </label>
+        <label>
+          Unit to convert from
+          <select name="from_unit" aria-label="Select from unit" required>
+            <option value="milligram">Milligram</option>
+            <option value="gram">Gram</option>
+            <option value="kilogram">Kilogram</option>
+            <option value="ounce">Ounce</option>
+            <option value="pound">Pound</option>
+          </select>
+        </label>
+        <label>
+          Unit to convert to
+          <select name="to_unit" aria-label="Select to unit" required>
+            <option value="milligram">Milligram</option>
+            <option value="gram">Gram</option>
+            <option value="kilogram">Kilogram</option>
+            <option value="ounce">Ounce</option>
+            <option value="pound">Pound</option>
+          </select>
+        </label>
+      </fieldset>
+      <button type="submit">Convert</button>
+    </form>
+    {{ end }}
+  </main>
+</body>
+
+</html>
