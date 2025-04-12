@@ -1,6 +1,6 @@
-# TodoCLI
+# Unit Converter
 
-This project is for learning purpose in <https://roadmap.sh/projects/task-tracker>
+This project is for learning purpose in <https://roadmap.sh/projects/unit-converter>
 
 ## How to run program
 
